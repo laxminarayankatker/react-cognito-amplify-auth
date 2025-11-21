@@ -15,10 +15,11 @@ export default function Dashboard(){
     useEffect(() => {
         const fetchDashboardData = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_GATEWAY_2}/dashboard`, {
+                const response = await fetch(`${process.env.REACT_APP_API_GATEWAY_1}/cookies/dashboard`, {
                     method: 'GET',
                     headers: {
                       'Content-Type': 'application/json',
+                      'x-forwarded-host': window.location.host
                     },
                     credentials: 'include', // Important: This sends cookies (id_token, access_token, refresh_token)
                 });
