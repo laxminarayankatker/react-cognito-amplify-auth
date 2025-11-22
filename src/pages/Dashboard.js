@@ -15,7 +15,7 @@ export default function Dashboard(){
     useEffect(() => {
         const fetchDashboardData = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_GATEWAY_1}/cookies/dashboard`, {
+                const response = await fetch(`${process.env.REACT_APP_API_GATEWAY_1}/prod/cookies/dashboard`, {
                     method: 'GET',
                     headers: {
                       'Content-Type': 'application/json',
