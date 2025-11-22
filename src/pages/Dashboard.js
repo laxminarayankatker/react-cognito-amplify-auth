@@ -19,7 +19,9 @@ export default function Dashboard(){
                     method: 'GET',
                     headers: {
                       'Content-Type': 'application/json',
-                      'x-forwarded-host': window.location.host
+                      'x-forwarded-host': window.location.host,
+                      'Authorization': `Bearer ${localStorage.getItem('id_token')}`,
+                      'Authorization': `Bearer ${localStorage.getItem('access_token')}`
                     },
                     credentials: 'include', // Important: This sends cookies (id_token, access_token, refresh_token)
                 });
